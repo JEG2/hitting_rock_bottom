@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby -w
+
+begin
+  require "hitting_rock_bottom"
+rescue LoadError
+  $LOAD_PATH << File.join(File.dirname(__FILE__), *%w[.. lib])
+  retry
+end
+
+HittingRockBottom.solve(ARGF)
